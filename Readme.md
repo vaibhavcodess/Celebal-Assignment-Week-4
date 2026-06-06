@@ -1,14 +1,59 @@
-This assignment demonstrates an end-to-end Azure Data Engineering pipeline using Azure Storage Account and Azure Data Factory (ADF).
+# Azure ETL Superstore Pipeline
 
-First, a Resource Group and Azure Storage Account were created in the Azure Portal. Two Blob Containers named source-container and destination-container were created. The Superstore CSV dataset was uploaded into the source-container.
+This project is a basic end-to-end ETL pipeline built using Azure Data Factory and Azure Blob Storage.
 
-Azure Data Factory was then created to build the data pipeline. A Linked Service was configured to establish connectivity between ADF and Azure Blob Storage. Source and destination datasets were created using DelimitedText format for handling the CSV file.
+The pipeline takes a CSV file from a source blob container, checks the file metadata, and copies the file into another blob container using Azure Data Factory activities.
 
-A pipeline named pl_superstore_pipeline was developed using two activities:
+## Services Used
 
-1. Get Metadata activity – used to validate file existence and retrieve file information.
-2. Copy Data activity – used to copy the CSV file from source-container to destination-container.
+* Azure Resource Group
+* Azure Storage Account
+* Azure Blob Containers
+* Azure Data Factory
+* IAM Role Assignment
 
-The pipeline was executed successfully using Debug mode, and execution was monitored through the Monitor tab in ADF Studio. IAM roles such as Reader and Contributor were also assigned to ensure proper access control between services.
+## Dataset
 
-The final output confirmed successful metadata validation and file transfer from source to destination container in Azure Blob Storage.
+Dataset used:
+
+* Superstore Sales CSV Dataset
+
+## Workflow
+
+1. Created a Resource Group in Azure
+2. Created a Storage Account
+3. Created two Blob Containers:
+
+   * source-container
+   * destination-container
+4. Uploaded CSV file into source-container
+5. Created Azure Data Factory
+6. Connected Blob Storage using Linked Service
+7. Created Source and Destination datasets
+8. Added Get Metadata activity
+9. Added Copy Data activity
+10. Executed and monitored the pipeline
+
+## Pipeline Flow
+
+```text id="6jlwmv"
+Source CSV File
+      ↓
+Get Metadata Activity
+      ↓
+Copy Data Activity
+      ↓
+Destination Container
+```
+
+## Output
+
+The pipeline successfully copied the CSV file from the source container to the destination container.
+
+## Screenshots
+
+Project screenshots are available inside the `screenshots` folder.
+
+## Author
+
+Vaibhav Singh
