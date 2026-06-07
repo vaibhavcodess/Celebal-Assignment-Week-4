@@ -52,7 +52,7 @@ The pipeline successfully copied the CSV file from the source container to the d
 
 ## Screenshots
 
-Project screenshots are available inside the `screenshots` folder.
+Project screenshots are available as .png images.
 
 ## Author
 
